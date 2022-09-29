@@ -1,0 +1,139 @@
+
+/*********************************** Geral ***********************************/
+
+body {
+    background-color: #E7E7E7;
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1400px;
+    }
+}
+
+.card{
+    width: 1300px;
+    height: 700px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.main-title{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.main-row{
+    height: 100%;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.texto-subtitulo{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+
+
+/*********************************** Left Column ***********************************/
+
+.imagem-produto-small{
+    width: 100px;
+    height: 100px;
+}
+
+
+.texto-produto-small{
+    font-size: 25px;
+}
+
+.produto-box{
+    cursor: pointer;
+}
+
+
+/*********************************** Mid Column ***********************************/
+
+.imagem-produto{
+    width: 250px;
+    height: 250px;
+}
+
+.quantidade-label{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.valor-pagar-text{
+    font-size: 18px;
+}
+
+
+/*********************************** Right Column ***********************************/
+
+.valor-saldo{
+    font-size: 40px;
+    border-style: solid;
+    padding: 10px;
+}
+
+
+.numero-box{
+    font-size: 30px;
+    width: 100px;
+    height: 65px;
+    border: 2px solid black;
+}
+
+.numero-box:hover{
+    font-size: 30px;
+    width: 100px;
+    height: 65px;
+    border: 2px solid black;
+    background-color: #C0BFBF;
+}
+
+.delete-image{
+    width: 50px;
+    height: 40px;
+}
+
+.numero-box-green{
+    font-size: 17px;
+    font-weight: bold;
+
+    width: 100px;
+    height: 65px;
+    border: 2px solid black;
+    background-color: #319240
+}
+
+.numero-box-green:hover{
+
+    width: 100px;
+    height: 65px;
+    border: 2px solid black;
+    background-color: #277233
+}
+
+.box-retirar-dinheiro{
+    font-size: 30px;
+
+    width: 316px;
+    height: 65px;
+
+    background-color: #ff9999
+}
+
+.box-retirar-dinheiro:hover{
+
+    width: 316px;
+    height: 65px;
+
+    background-color: #ff8080
+}
+

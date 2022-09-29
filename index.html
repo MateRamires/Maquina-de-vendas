@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+
+    <title>Urna Eletrônica</title>
+
+</head>
+
+<body>
+
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card">
+            <div class="row main-row">
+                <div class="col-4 d-flex flex-column justify-content-center align-items-center">
+
+                    <div class="d-flex flex-column align-items-center produto-box mb-4" data-value='1' onclick="mudarProduto(this.dataset.value)">
+                        <div class="texto-produto-small mb-2">Arroz Branco</div>
+
+                        <img class="imagem-produto-small mb-2" id="imagemCandidato"
+                        src="./images/arroz.jpg">
+
+                        <div class="d-flex">
+                            <div class="mr-4">R$ 27,00</div> 
+                            <div>Estoque: <span class="bold" id="produtoEstoque1">5</span></div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column align-items-center produto-box mb-4 mt-2" data-value='2' onclick="mudarProduto(this.dataset.value)">
+                        <div class="texto-produto-small mb-2">Detergente</div>
+
+                        <img class="imagem-produto-small mb-2" id="imagemCandidato"
+                        src="./images/detergente.jpg">
+
+                        <div class="d-flex">
+                            <div class="mr-4">R$ 2,50</div> 
+                            <div>Estoque: <span class="bold" id="produtoEstoque2">7</span></div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column align-items-center produto-box mt-2" data-value='3' onclick="mudarProduto(this.dataset.value)">
+                        <div class="texto-produto-small mb-2">Coca-Cola</div>
+
+                        <img class="imagem-produto-small mb-2" id="imagemCandidato"
+                        src="./images/coca.jpg">
+
+                        <div class="d-flex">
+                            <div class="mr-4">R$ 9,00</div> 
+                            <div>Estoque: <span class="bold" id="produtoEstoque3">2</span></div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+
+                <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+
+                    <div class="texto-subtitulo mb-2" id="nomeProduto">Arroz Branco</div>
+
+                    <img class="imagem-produto" id="imagemProduto"
+                    src="https://www.clubeextra.com.br/img/uploads/1/219/528219.jpg">
+
+                    <div class="d-flex flex-column align-items-center mt-3 mb-3">
+                        <label class="quantidade-label">Digite a quantidade</label>
+                        <input value="1" type="number" min="1" onchange="mudarQuantidadeProduto(this.value)" class="form-control" id="quantidade"/>
+                    </div>
+
+                    <div class="mb-3 valor-pagar-text">Valor total a pagar: <span class="bold"><span id="valorTotalAPagar">27.00</span> R$</span></div>
+                    <div class="mb-3 valor-pagar-text">Estoque disponivel: <span class="bold" id="EstoqueProduto">5</span></div>
+
+                    <button class="btn btn-success" onclick="comprarProduto()">Comprar</button>
+
+                </div>
+
+
+                <div class="col-5 d-flex flex-column justify-content-center align-items-center">
+                    <div class="flex-column mb-5">
+                        <div class="d-flex justify-content-center texto-subtitulo">Seu saldo</div>
+                        <div class="d-flex justify-content-center valor-saldo">R$&nbsp;<span id="saldoUsuario">0.00</span></div>
+                    </div>
+                    <div class="d-flex texto-subtitulo">
+                        <div class="mr-3">Valor digitado:</div>
+                        <div id="numDigitado1"></div>
+                        <div id="numDigitado2"></div>
+                        <div id="ponto" style="display:none;">.</div>
+                        <div id="numDigitado3"></div>
+                        <div class="mr-2" id="numDigitado4"></div>
+                        R$
+                    </div>
+                    <div class="d-flex mt-2">
+                        <button type="button" class="numero-box" value="1" onclick="digitarValor(this.value)">1</button>
+                        <button type="button" class="numero-box ml-2" value="2" onclick="digitarValor(this.value)">2</button>
+                        <button type="button" class="numero-box ml-2" value="3" onclick="digitarValor(this.value)">3</button>
+                    </div>
+                    <div class="d-flex mt-3">
+                        <button type="button" class="numero-box" value="4" onclick="digitarValor(this.value)">4</button>
+                        <button type="button" class="numero-box ml-2" value="5" onclick="digitarValor(this.value)">5</button>
+                        <button type="button" class="numero-box ml-2" value="6" onclick="digitarValor(this.value)">6</button>
+                    </div>
+                    <div class="d-flex mt-3">
+                        <button type="button" class="numero-box" value="7" onclick="digitarValor(this.value)">7</button>
+                        <button type="button" class="numero-box ml-2" value="8" onclick="digitarValor(this.value)">8</button>
+                        <button type="button" class="numero-box ml-2" value="9" onclick="digitarValor(this.value)">9</button>
+                    </div>
+                    <div class="d-flex mt-3">
+                        <button type="button" class="numero-box" value="0" onclick="LimparNumerosDigitados()"><img class="delete-image" src="https://cdn3.iconfinder.com/data/icons/mobile-line/100/mobile-delete-512.png"></button>
+                        <button type="button" class="numero-box ml-2" value="0" onclick="digitarValor(this.value)">0</button>
+                        <button type="button" class="numero-box-green ml-2" value="0" onclick="adicionarSaldo()">Confirmar</button>
+                    </div>
+                    <div class="d-flex mt-3">
+                        <button type="button" class="box-retirar-dinheiro" value="0" id="num2" onclick="retirarDinheiro()">Retirar Dinheiro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<script src="js/script.js"></script>
+</html>

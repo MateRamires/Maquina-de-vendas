@@ -190,8 +190,11 @@ function comprarProduto() {
 
         } else {
 
+            let quantosReaisFaltam = saldo - valorTotal;
+
             Swal.fire(
-                'Saldo Insuficiente!'
+                `Saldo Insuficiente! 
+                 esta faltando ${Math.abs(quantosReaisFaltam).toFixed(2)} R$.`
             )
 
         }
